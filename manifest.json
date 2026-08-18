@@ -1,0 +1,30 @@
+{
+  "manifest_version": 3,
+  "name": "bid.cars Helper",
+  "version": "1.0.0",
+  "description": "Hide listings you are not interested in and mark lots you already opened on bid.cars.",
+  "permissions": ["storage"],
+  "host_permissions": ["https://bid.cars/*", "https://www.bid.cars/*"],
+  "action": {
+    "default_title": "bid.cars Helper",
+    "default_popup": "popup/popup.html",
+    "default_icon": {
+      "16": "icons/icon16.png",
+      "48": "icons/icon48.png",
+      "128": "icons/icon128.png"
+    }
+  },
+  "icons": {
+    "16": "icons/icon16.png",
+    "48": "icons/icon48.png",
+    "128": "icons/icon128.png"
+  },
+  "content_scripts": [
+    {
+      "matches": ["https://bid.cars/*", "https://www.bid.cars/*"],
+      "js": ["src/content.js"],
+      "css": ["src/content.css"],
+      "run_at": "document_idle"
+    }
+  ]
+}
